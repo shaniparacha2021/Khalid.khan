@@ -1,872 +1,270 @@
-'use client';
-
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Linkedin, 
-  Award, 
-  Users, 
-  BookOpen, 
-  GraduationCap, 
-  Star, 
-  ArrowRight, 
-  Briefcase, 
-  Calendar, 
-  Building,
-  CheckCircle
-} from 'lucide-react';
+import Image from "next/image";
+import { Mail, Phone, MapPin, Linkedin, User, Briefcase, GraduationCap, Award, Star } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
-      {/* Navigation */}
-      <motion.nav 
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="fixed top-0 w-full bg-black/20 backdrop-blur-md z-50 border-b border-white/10"
-      >
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <motion.div 
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center space-x-3"
-            >
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">KM</span>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+      {/* Top Banner Section */}
+      <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+            {/* Left Side - Name and Position */}
+            <div className="flex-1 text-center lg:text-left">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                KHALID MASOOD KHAN
+              </h1>
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-blue-100 font-medium mb-4">
+                Senior Manager – Operational Excellence
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 text-sm sm:text-base">
+                <div className="flex items-center justify-center lg:justify-start gap-2">
+                  <Mail className="w-4 h-4" />
+                  <span>khalid_masood79@hotmail.com</span>
+                </div>
+                <div className="flex items-center justify-center lg:justify-start gap-2">
+                  <Phone className="w-4 h-4" />
+                  <span>+92 300 8454448 | +92 345 4021637</span>
+                </div>
+                <div className="flex items-center justify-center lg:justify-start gap-2">
+                  <MapPin className="w-4 h-4" />
+                  <span>Lahore, Pakistan</span>
+                </div>
               </div>
-              <span className="text-white font-bold text-xl">Khalid Masood Khan</span>
-            </motion.div>
-            <div className="hidden md:flex space-x-8">
-              {['About', 'Experience', 'Education', 'Contact'].map((item, index) => (
-                <motion.a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.1 }}
-                  className="text-white/80 hover:text-white transition-colors font-medium"
-                >
-                  {item}
-                </motion.a>
-              ))}
+            </div>
+            
+            {/* Right Side - Profile Image */}
+            <div className="flex-shrink-0">
+              <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+        <Image
+                  src="/Khalid Masood Khan.jpg"
+                  alt="Khalid Masood Khan"
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover"
+          priority
+        />
+              </div>
             </div>
           </div>
-        </div>
-      </motion.nav>
-
-      {/* Top Banner Section */}
-      <section id="home" className="relative bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 py-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="flex flex-col lg:flex-row items-center justify-between gap-12"
-          >
-            {/* Left Content */}
-            <div className="lg:w-2/3 text-center lg:text-left">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="mb-6"
-              >
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
-                  KHALID MASOOD KHAN
-                </h1>
-                <div className="w-32 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto lg:mx-0 mb-6"></div>
-                <h2 className="text-2xl md:text-3xl text-blue-300 font-semibold mb-2">
-                  Senior Manager – Operational Excellence
-                </h2>
-                <p className="text-xl text-gray-300 font-light mb-8">
-                  Strategic HR & Operations Leader | Organizational Excellence | AI-Driven HR Transformation
-                </p>
-              </motion.div>
-
-              {/* Contact Info */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8"
-              >
-                <div className="flex items-center justify-center lg:justify-start gap-3 text-gray-300">
-                  <Mail className="w-5 h-5 text-blue-400" />
-                  <span className="text-lg">khalid_masood79@hotmail.com</span>
-                </div>
-                <div className="flex items-center justify-center lg:justify-start gap-3 text-gray-300">
-                  <Phone className="w-5 h-5 text-blue-400" />
-                  <span className="text-lg">+92 300 8454448</span>
-                </div>
-                <div className="flex items-center justify-center lg:justify-start gap-3 text-gray-300">
-                  <Phone className="w-5 h-5 text-blue-400" />
-                  <span className="text-lg">+92 345 4021637</span>
-                </div>
-                <div className="flex items-center justify-center lg:justify-start gap-3 text-gray-300">
-                  <MapPin className="w-5 h-5 text-blue-400" />
-                  <span className="text-lg">Lahore, Pakistan</span>
-                </div>
-              </motion.div>
-
-              {/* Action Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-              >
-                <motion.a
-                  href="https://www.linkedin.com/in/KhalidKhanManager"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.4)" }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg"
-                >
-                  <Linkedin className="w-6 h-6" />
-                  Connect on LinkedIn
-                  <motion.div
-                    className="w-2 h-2 bg-white rounded-full"
-                    animate={{ scale: [1, 1.2, 1], opacity: [0.8, 1, 0.8] }}
-                    transition={{ repeat: Infinity, duration: 1.5 }}
-                  ></motion.div>
-                </motion.a>
-                <motion.a
-                  href="#contact"
-                  whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.4)" }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 border border-white/20"
-                >
-                  <Mail className="w-6 h-6" />
-                  Get In Touch
-                </motion.a>
-              </motion.div>
-            </div>
-
-            {/* Right Content - Profile Image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-              className="lg:w-1/3 relative flex justify-center items-center"
+          
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center lg:justify-start">
+            <a
+              href="https://www.linkedin.com/in/KhalidKhanManager"
+            target="_blank"
+            rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
             >
-              <div className="relative">
-                <div className="w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-blue-500/50">
-                  <Image
-                    src="/khalid-masood-khan.png"
-                    alt="Khalid Masood Khan Profile"
-                    width={400}
-                    height={400}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  />
-                </div>
-                {/* Floating badges */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1, duration: 0.5 }}
-                  className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-4"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="bg-white/20 backdrop-blur-md p-4 rounded-xl shadow-lg flex items-center gap-2 text-blue-200"
-                  >
-                    <Award className="w-6 h-6 text-blue-400" />
-                    <span className="font-semibold">22+ Years Exp.</span>
-                  </motion.div>
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="bg-white/20 backdrop-blur-md p-4 rounded-xl shadow-lg flex items-center gap-2 text-blue-200"
-                  >
-                    <Star className="w-6 h-6 text-yellow-400" />
-                    <span className="font-semibold">AI-Driven HR</span>
-                  </motion.div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </motion.div>
+              <Linkedin className="w-5 h-5" />
+              LinkedIn Profile
+          </a>
+          <a
+              href="mailto:khalid_masood79@hotmail.com"
+              className="inline-flex items-center gap-2 bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors"
+            >
+              <Mail className="w-5 h-5" />
+              Get In Touch
+            </a>
+          </div>
         </div>
-      </section>
+      </div>
 
-      {/* About Section */}
-      <section id="about" className="py-20 px-6 bg-black/20">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Professional Summary */}
+        <section className="mb-12">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <User className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
               Professional Summary
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            <motion.div 
-              initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="lg:col-span-2 space-y-6"
-            >
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                <p className="text-lg text-blue-100 leading-relaxed mb-6">
-                  Strategic HR and Operations Leader with over <span className="text-blue-400 font-bold">22 years</span> of progressive experience driving 
-                  <span className="text-purple-400 font-bold"> Organizational Excellence</span>, 
-                  <span className="text-purple-400 font-bold"> Human Resource Transformation</span>, 
-                  and <span className="text-purple-400 font-bold">Corporate Governance</span> across diversified industries.
-                </p>
-                <p className="text-lg text-blue-100 leading-relaxed">
-                  Adept at developing and implementing people-centric strategies that enhance productivity, engagement, and business performance through data-driven and technology-enabled HR practices.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-2xl p-6 border border-blue-400/20">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                  <Users className="w-6 h-6 mr-2 text-blue-400" />
-                  Key Expertise
-                </h3>
-                <ul className="space-y-3">
-                  {['Strategic HR Management', 'AI Integration in HR', 'Organizational Development', 'Change Management', 'Talent Acquisition', 'Performance Management'].map((item, index) => (
-                    <motion.li 
-                      key={index}
-                      initial={{ x: 20, opacity: 0 }}
-                      whileInView={{ x: 0, opacity: 1 }}
-                      transition={{ delay: index * 0.1, duration: 0.5 }}
-                      viewport={{ once: true }}
-                      className="flex items-center text-blue-100"
-                    >
-                      <Star className="w-4 h-4 text-yellow-400 mr-3" />
-                      {item}
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
+            <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
+              Strategic HR and Operations Leader with over 22 years of progressive experience driving Organizational Excellence, Human Resource Transformation, and Corporate Governance across diversified industries. Adept at developing and implementing people-centric strategies that enhance productivity, engagement, and business performance. Having expertise in Artificial Intelligence (AI) and its practical implementation across multiple HR functions, including talent acquisition, performance management, learning & development, and employee engagement, to enhance efficiency, decision-making, and organizational capability. Recognized for leading cross-functional teams, aligning human capital strategies with corporate goals, and fostering cultures of innovation and continuous improvement through data-driven and technology-enabled HR practices.
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Core Competencies */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Core Competencies
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              'Strategic Human Resource Management',
-              'Organizational Development (OD) & Change Management',
-              'Talent Acquisition & Workforce Planning',
-              'Learning & Leadership Development',
-              'Performance Management Systems',
-              'Employee Engagement & Retention Strategies',
-              'AI Integration in HR & Business Processes',
-              'Corporate Governance & Compliance',
-              'Operational Excellence & Continuous Improvement'
-            ].map((competency, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Star className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-white font-medium group-hover:text-blue-100 transition-colors">{competency}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="py-20 px-6 bg-black/20">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+        {/* Professional Experience */}
+        <section className="mb-12">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <Briefcase className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
               Professional Experience
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
-          </motion.div>
-
-          <div className="space-y-8">
-            {/* Current Role */}
-            <motion.div 
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 border border-blue-400/20"
-            >
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Briefcase className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      Senior Manager – Operational Excellence
-                    </h3>
-                    <p className="text-xl text-blue-300 font-semibold">Master Group of Industries</p>
-                  </div>
-                </div>
-                <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full text-sm mt-4 lg:mt-0">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Aug 2016 – Present
-                </span>
+            <div className="space-y-6">
+              <div className="border-l-4 border-blue-400 pl-4 sm:pl-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                  Senior Manager – Operational Excellence | Master Group of Industries
+                </h3>
+                <p className="text-blue-200 text-sm sm:text-base mb-3">Aug 2016 – Present</p>
+                <ul className="text-gray-200 text-sm sm:text-base space-y-2 list-disc list-inside">
+                  <li>Lead organizational excellence initiatives and continuous improvement programs across the group.</li>
+                  <li>Designed and implemented HR process improvements resulting in reduced recruitment turnaround time and enhanced employee experience.</li>
+                  <li>Introduced AI-assisted tools in HR operations to automate performance appraisals and streamline hiring workflows.</li>
+                  <li>Partnered with senior leadership to develop and implement strategic manpower planning aligned with business goals.</li>
+                  <li>Led change management initiatives fostering innovation, efficiency, and engagement.</li>
+                  <li>Collaborated with HR teams on training needs assessment and leadership development programs.</li>
+                  <li>Facilitated corporate governance and board meetings, ensuring compliance and operational transparency.</li>
+                  <li>Provided executive advisory services to Managing Director and Chairman on HR and operational matters.</li>
+                </ul>
               </div>
-              <ul className="space-y-4">
-                {[
-                  'Lead organizational excellence initiatives and continuous improvement programs across the group',
-                  'Designed and implemented HR process improvements resulting in reduced recruitment turnaround time',
-                  'Introduced AI-assisted tools in HR operations to automate performance appraisals',
-                  'Partnered with senior leadership to develop strategic manpower planning aligned with business goals',
-                  'Led change management initiatives fostering innovation, efficiency, and engagement',
-                  'Provided executive advisory services to Managing Director and Chairman on HR matters'
-                ].map((item, index) => (
-                  <motion.li 
-                    key={index}
-                    initial={{ x: -20, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                    viewport={{ once: true }}
-                    className="flex items-start text-blue-100"
-                  >
-                    <ArrowRight className="w-5 h-5 text-blue-400 mr-3 mt-1 flex-shrink-0" />
-                    {item}
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
 
-            {/* Previous Roles */}
-            <div className="grid md:grid-cols-2 gap-6">
+              <div className="border-l-4 border-green-400 pl-4 sm:pl-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                  Corporate & Business Support Executive | Panasian Group of Companies
+                </h3>
+                <p className="text-green-200 text-sm sm:text-base mb-3">Jan 2013 – Aug 2016</p>
+                <ul className="text-gray-200 text-sm sm:text-base space-y-2 list-disc list-inside">
+                  <li>Coordinated administrative and corporate functions across departments to improve operational synergy.</li>
+                  <li>Implemented business process standardization using KPI and SLA-driven insights.</li>
+                  <li>Delivered training programs to enhance workforce efficiency and professional skills.</li>
+                  <li>Supported compliance, internal communication, and cross-functional project alignment.</li>
+                  <li>Arranged and managed high-level corporate meetings and leadership team interactions.</li>
+                </ul>
+              </div>
+
+              <div className="border-l-4 border-purple-400 pl-4 sm:pl-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                  Secretary to Director Professional Development | The City School System
+                </h3>
+                <p className="text-purple-200 text-sm sm:text-base mb-3">Feb 2012 – Jan 2013</p>
+                <ul className="text-gray-200 text-sm sm:text-base space-y-2 list-disc list-inside">
+                  <li>Supported director-level HR and training operations with focus on organizational capability enhancement.</li>
+                </ul>
+              </div>
+
+              <div className="border-l-4 border-orange-400 pl-4 sm:pl-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                  Customer Services & Sales Officer | Telenor Pakistan (Pvt.) Ltd
+                </h3>
+                <p className="text-orange-200 text-sm sm:text-base mb-3">Jan 2007 – Mar 2011</p>
+                <ul className="text-gray-200 text-sm sm:text-base space-y-2 list-disc list-inside">
+                  <li>Delivered customer engagement excellence and developed communication and negotiation skills foundational to HR practice.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Education */}
+        <section className="mb-12">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
+              Education
+            </h2>
+            <div className="grid gap-4 sm:gap-6">
+              <div className="bg-white/5 rounded-lg p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                  Master of Business Administration (HRM Specialization)
+                </h3>
+                <p className="text-blue-200 text-sm sm:text-base">University of Sargodha, 2015</p>
+              </div>
+              <div className="bg-white/5 rounded-lg p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                  Bachelor of Commerce (Humanitarian Group)
+                </h3>
+                <p className="text-blue-200 text-sm sm:text-base">University of the Punjab, 2000</p>
+              </div>
+              <div className="bg-white/5 rounded-lg p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                  Multiple Diplomas & Certificates in Computer Sciences
+                </h3>
+                <p className="text-blue-200 text-sm sm:text-base">Modern College of Computer Sciences, Lahore (2000–2002)</p>
+              </div>
+              <div className="bg-white/5 rounded-lg p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                  Higher Secondary School Certificate (Pre-Medical)
+                </h3>
+                <p className="text-blue-200 text-sm sm:text-base">Federal Board of Intermediate & Secondary Education, 1998</p>
+              </div>
+              <div className="bg-white/5 rounded-lg p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                  Secondary School Certificate (Science)
+                </h3>
+                <p className="text-blue-200 text-sm sm:text-base">Federal Board of Intermediate & Secondary Education, 1996</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Professional Development & Certifications */}
+        <section className="mb-12">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <Award className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
+              Professional Development & Certifications
+            </h2>
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg p-4 sm:p-6 border border-blue-400/30">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                  AI for Professionals – LUMS, 2025
+                </h3>
+                <p className="text-gray-200 text-sm sm:text-base">
+                  Expertise in applying Generative AI for HR automation, analytics, and decision support.
+                </p>
+              </div>
+              <div className="bg-white/5 rounded-lg p-4 sm:p-6">
+                <p className="text-gray-200 text-sm sm:text-base">
+                  Training in Corporate Governance, Leadership Development, and Operational Transformation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Key Skills */}
+        <section className="mb-12">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <Star className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
+              Key Skills
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                {
-                  title: "Corporate & Business Support Executive",
-                  company: "Panasian Group of Companies",
-                  period: "Jan 2013 – Aug 2016",
-                  icon: Building,
-                  color: "from-green-500 to-teal-500",
-                  items: [
-                    "Coordinated administrative and corporate functions across departments to improve operational synergy",
-                    "Implemented business process standardization using KPI and SLA-driven insights",
-                    "Delivered training programs to enhance workforce efficiency and professional skills",
-                    "Supported compliance, internal communication, and cross-functional project alignment",
-                    "Arranged and managed high-level corporate meetings and leadership team interactions"
-                  ]
-                },
-                {
-                  title: "Secretary to Director Professional Development",
-                  company: "The City School System",
-                  period: "Feb 2012 – Jan 2013",
-                  icon: BookOpen,
-                  color: "from-purple-500 to-pink-500",
-                  items: [
-                    "Supported director-level HR and training operations with focus on organizational capability enhancement"
-                  ]
-                },
-                {
-                  title: "Customer Services & Sales Officer",
-                  company: "Telenor Pakistan (Pvt.) Ltd",
-                  period: "Jan 2007 – Mar 2011",
-                  icon: Users,
-                  color: "from-orange-500 to-red-500",
-                  items: [
-                    "Delivered customer engagement excellence and developed communication and negotiation skills foundational to HR practice"
-                  ]
-                }
-              ].map((role, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ delay: index * 0.2, duration: 0.8 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
-                >
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className={`w-10 h-10 bg-gradient-to-r ${role.color} rounded-lg flex items-center justify-center`}>
-                      <role.icon className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white">{role.title}</h3>
-                      <p className="text-sm text-blue-300">{role.period}</p>
-                    </div>
-                  </div>
-                  <p className="text-blue-300 font-semibold mb-4">{role.company}</p>
-                  <ul className="space-y-2 text-blue-100 text-sm">
-                    {role.items.map((item, itemIndex) => (
-                      <li key={itemIndex}>• {item}</li>
-                    ))}
-                  </ul>
-                </motion.div>
+                "Strategic HR Leadership",
+                "AI-Powered HR Analytics",
+                "Employee Engagement & Culture Building",
+                "Learning & Development (L&D)",
+                "Performance Management",
+                "Change Management & Organizational Transformation",
+                "Process Re-engineering & Operational Excellence",
+                "Executive Advisory & Stakeholder Management"
+              ].map((skill, index) => (
+                <div key={index} className="bg-white/5 rounded-lg p-4 text-center">
+                  <span className="text-white text-sm sm:text-base font-medium">{skill}</span>
+                </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Education & Certifications */}
-      <section id="education" className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Education & Certifications
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: GraduationCap,
-                title: "Master of Business Administration (HRM Specialization)",
-                institution: "University of Sargodha",
-                year: "2015",
-                color: "from-green-500/20 to-teal-500/20",
-                borderColor: "border-green-400/20",
-                iconColor: "text-green-400",
-                textColor: "text-green-300"
-              },
-              {
-                icon: BookOpen,
-                title: "Bachelor of Commerce (Humanitarian Group)",
-                institution: "University of the Punjab",
-                year: "2000",
-                color: "from-purple-500/20 to-pink-500/20",
-                borderColor: "border-purple-400/20",
-                iconColor: "text-purple-400",
-                textColor: "text-purple-300"
-              },
-              {
-                icon: Award,
-                title: "AI for Professionals",
-                institution: "LUMS",
-                year: "2025",
-                color: "from-blue-500/20 to-indigo-500/20",
-                borderColor: "border-blue-400/20",
-                iconColor: "text-blue-400",
-                textColor: "text-blue-300",
-                description: "Expertise in applying Generative AI for HR automation, analytics, and decision support"
-              },
-              {
-                icon: BookOpen,
-                title: "Multiple Diplomas & Certificates in Computer Sciences",
-                institution: "Modern College of Computer Sciences, Lahore",
-                year: "2000–2002",
-                color: "from-indigo-500/20 to-blue-500/20",
-                borderColor: "border-indigo-400/20",
-                iconColor: "text-indigo-400",
-                textColor: "text-indigo-300"
-              },
-              {
-                icon: GraduationCap,
-                title: "Higher Secondary School Certificate (Pre-Medical)",
-                institution: "Federal Board of Intermediate & Secondary Education",
-                year: "1998",
-                color: "from-teal-500/20 to-green-500/20",
-                borderColor: "border-teal-400/20",
-                iconColor: "text-teal-400",
-                textColor: "text-teal-300"
-              },
-              {
-                icon: GraduationCap,
-                title: "Secondary School Certificate (Science)",
-                institution: "Federal Board of Intermediate & Secondary Education",
-                year: "1996",
-                color: "from-emerald-500/20 to-teal-500/20",
-                borderColor: "border-emerald-400/20",
-                iconColor: "text-emerald-400",
-                textColor: "text-emerald-300"
-              }
-            ].map((edu, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className={`bg-gradient-to-br ${edu.color} backdrop-blur-sm rounded-2xl p-6 border ${edu.borderColor}`}
+        {/* Contact Section */}
+        <section className="mb-12">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl p-6 sm:p-8 text-white text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Ready to Connect?</h2>
+            <p className="text-blue-100 mb-6 text-sm sm:text-base">
+              Let&apos;s discuss how I can contribute to your organization&apos;s success.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="mailto:khalid_masood79@hotmail.com"
+                className="inline-flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
               >
-                <div className="flex items-center mb-4">
-                  <edu.icon className={`w-8 h-8 ${edu.iconColor} mr-3`} />
-                  <h3 className="text-xl font-bold text-white">{edu.title}</h3>
-                </div>
-                <p className={`${edu.textColor} font-semibold mb-2`}>{edu.institution}</p>
-                <p className="text-white/80 text-sm mb-2">{edu.year}</p>
-                {edu.description && (
-                  <p className="text-white/70 text-sm italic">{edu.description}</p>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Professional Development & Certifications Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-slate-800/30 to-slate-900/30">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl font-bold text-white mb-4">
-              Professional Development & Certifications
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "AI for Professionals",
-                institution: "LUMS",
-                year: "2025",
-                description: "Expertise in applying Generative AI for HR automation, analytics, and decision support",
-                icon: Award,
-                color: "from-blue-500/20 to-indigo-500/20",
-                borderColor: "border-blue-400/20",
-                iconColor: "text-blue-400"
-              },
-              {
-                title: "Corporate Governance, Leadership Development, and Operational Transformation",
-                institution: "Various Institutions",
-                year: "Ongoing",
-                description: "Comprehensive training in corporate governance, leadership development, and operational transformation",
-                icon: Users,
-                color: "from-purple-500/20 to-pink-500/20",
-                borderColor: "border-purple-400/20",
-                iconColor: "text-purple-400"
-              }
-            ].map((cert, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className={`bg-gradient-to-br ${cert.color} backdrop-blur-sm rounded-2xl p-8 border ${cert.borderColor}`}
+                <Mail className="w-5 h-5" />
+                Email Me
+        </a>
+        <a
+                href="tel:+923008454448"
+                className="inline-flex items-center gap-2 bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors"
               >
-                <div className="flex items-center mb-4">
-                  <cert.icon className={`w-8 h-8 ${cert.iconColor} mr-3`} />
-                  <h3 className="text-xl font-bold text-white">{cert.title}</h3>
-                </div>
-                <p className="text-gray-300 font-semibold mb-2">{cert.institution}</p>
-                <p className="text-white/80 text-sm mb-3">{cert.year}</p>
-                <p className="text-white/70 text-sm italic">{cert.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Key Skills Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-slate-900/30 to-slate-800/30">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl font-bold text-white mb-4">
-              Key Skills
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              "Strategic HR Leadership",
-              "AI-Powered HR Analytics", 
-              "Employee Engagement & Culture Building",
-              "Learning & Development (L&D)",
-              "Performance Management",
-              "Change Management & Organizational Transformation",
-              "Process Re-engineering & Operational Excellence",
-              "Executive Advisory & Stakeholder Management"
-            ].map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-xl p-6 border border-blue-400/20 text-center"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Star className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-white font-semibold text-sm leading-tight">{skill}</h3>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-black/20">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Get In Touch
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
-            <p className="text-xl text-blue-100 mt-6">Ready to discuss your next project?</p>
-          </motion.div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Contact Info */}
-              <motion.div 
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="space-y-6"
-              >
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                  <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-                  <div className="space-y-6">
-                    {[
-                      {
-                        icon: Mail,
-                        label: "Email",
-                        value: "khalid_masood79@hotmail.com",
-                        href: "mailto:khalid_masood79@hotmail.com",
-                        color: "from-blue-500 to-purple-500"
-                      },
-                      {
-                        icon: Phone,
-                        label: "Phone",
-                        value: "+92 300 8454448",
-                        href: "tel:+923008454448",
-                        color: "from-green-500 to-teal-500"
-                      },
-                      {
-                        icon: Phone,
-                        label: "Phone",
-                        value: "+92 345 4021637",
-                        href: "tel:+923454021637",
-                        color: "from-purple-500 to-pink-500"
-                      },
-                      {
-                        icon: MapPin,
-                        label: "Location",
-                        value: "Lahore, Pakistan",
-                        href: "#",
-                        color: "from-purple-500 to-pink-500"
-                      }
-                    ].map((contact, index) => (
-                      <motion.div 
-                        key={index}
-                        initial={{ x: -20, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
-                        transition={{ delay: index * 0.1, duration: 0.5 }}
-                        viewport={{ once: true }}
-                        className="flex items-center space-x-4"
-                      >
-                        <div className={`w-12 h-12 bg-gradient-to-r ${contact.color} rounded-lg flex items-center justify-center`}>
-                          <contact.icon className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <p className="text-blue-300 font-semibold">{contact.label}</p>
-                          <a 
-                            href={contact.href}
-                            className="text-white hover:text-blue-300 transition-colors"
-                          >
-                            {contact.value}
-                          </a>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-
-                <motion.div 
-                  initial={{ x: -50, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.4, duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 border border-blue-400/20"
-                >
-                  <h3 className="text-2xl font-bold text-white mb-4">Connect With Me</h3>
-                  <motion.a
-                    href="https://www.linkedin.com/in/KhalidKhanManager"
-          target="_blank"
-          rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="group inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-xl transition-all duration-300"
-                  >
-                    <Linkedin className="w-5 h-5 mr-2" />
-                    Connect on LinkedIn
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </motion.a>
-                </motion.div>
-              </motion.div>
-
-              {/* Key Skills */}
-              <motion.div 
-                initial={{ x: 50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="space-y-6"
-              >
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                  <h3 className="text-2xl font-bold text-white mb-6">Key Skills</h3>
-                  <div className="grid grid-cols-1 gap-4">
-                    {[
-                      'Strategic HR Leadership',
-                      'AI-Powered HR Analytics',
-                      'Employee Engagement & Culture Building',
-                      'Learning & Development (L&D)',
-                      'Performance Management',
-                      'Change Management & Organizational Transformation',
-                      'Process Re-engineering & Operational Excellence',
-                      'Executive Advisory & Stakeholder Management'
-                    ].map((skill, index) => (
-                      <motion.div 
-                        key={index}
-                        initial={{ x: 20, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
-                        transition={{ delay: index * 0.1, duration: 0.5 }}
-                        viewport={{ once: true }}
-                        whileHover={{ scale: 1.02, x: 5 }}
-                        className="flex items-center space-x-3 p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
-                      >
-                        <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                        <span className="text-white font-medium">{skill}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
+                <Phone className="w-5 h-5" />
+                Call Me
+              </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-black/40 backdrop-blur-sm py-12 px-6 border-t border-white/10">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div 
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="flex items-center justify-center space-x-3 mb-6"
-          >
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">KM</span>
-            </div>
-            <span className="text-white font-bold text-xl">Khalid Masood Khan</span>
-          </motion.div>
-          <motion.p 
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-blue-200 mb-6"
-          >
-            Strategic HR & Operations Leader | AI-Driven HR Transformation
-          </motion.p>
-          <motion.div 
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            viewport={{ once: true }}
-            className="flex justify-center space-x-6 mb-8"
-          >
-            {[
-              { icon: Mail, href: "mailto:khalid_masood79@hotmail.com" },
-              { icon: Phone, href: "tel:+923008454448" },
-              { icon: Linkedin, href: "https://www.linkedin.com/in/KhalidKhanManager" }
-            ].map((social, index) => (
-              <motion.a
-                key={index}
-                href={social.href}
-                target={social.href.startsWith('http') ? '_blank' : undefined}
-                rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                className="text-blue-300 hover:text-white transition-colors"
-              >
-                <social.icon className="w-6 h-6" />
-              </motion.a>
-            ))}
-          </motion.div>
-          <motion.p 
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-gray-400 text-sm"
-          >
-            &copy; 2024 Khalid Masood Khan. All rights reserved.
-          </motion.p>
-        </div>
-      </footer>
+        </section>
+      </div>
     </div>
   );
 }
