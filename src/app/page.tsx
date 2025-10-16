@@ -1,11 +1,134 @@
+import React from "react";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Linkedin, User, Briefcase, GraduationCap, Award, Star } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, User, Briefcase, GraduationCap, Award, Star, Menu, X } from "lucide-react";
+
+// Mobile Navigation Component
+function MobileNavigation() {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
+
+  return (
+    <>
+      {/* Mobile Header */}
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-600 to-purple-700 shadow-lg">
+        <div className="flex items-center justify-between px-4 py-3">
+          <div className="text-white font-bold text-lg">Khalid Masood Khan</div>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {isOpen && (
+        <div className="lg:hidden fixed inset-0 z-40 bg-black/50" onClick={() => setIsOpen(false)}>
+          <div className="absolute right-0 top-0 h-full w-80 bg-gradient-to-b from-blue-600 to-purple-700 shadow-xl">
+            <div className="p-6 pt-20">
+              <nav className="space-y-4">
+                <button
+                  onClick={() => scrollToSection('summary')}
+                  className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
+                >
+                  <User className="w-5 h-5" />
+                  Professional Summary
+                </button>
+                <button
+                  onClick={() => scrollToSection('experience')}
+                  className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
+                >
+                  <Briefcase className="w-5 h-5" />
+                  Experience
+                </button>
+                <button
+                  onClick={() => scrollToSection('education')}
+                  className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
+                >
+                  <GraduationCap className="w-5 h-5" />
+                  Education
+                </button>
+                <button
+                  onClick={() => scrollToSection('certifications')}
+                  className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
+                >
+                  <Award className="w-5 h-5" />
+                  Certifications
+                </button>
+                <button
+                  onClick={() => scrollToSection('skills')}
+                  className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
+                >
+                  <Star className="w-5 h-5" />
+                  Key Skills
+                </button>
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
+                >
+                  <Mail className="w-5 h-5" />
+                  Contact
+                </button>
+              </nav>
+              
+              {/* Contact Info in Mobile Menu */}
+              <div className="mt-8 pt-6 border-t border-white/20">
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-center gap-2 text-white/80">
+                    <Mail className="w-4 h-4" />
+                    <span>khalid_masood79@hotmail.com</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/80">
+                    <Phone className="w-4 h-4" />
+                    <span>+92 300 8454448</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/80">
+                    <Phone className="w-4 h-4" />
+                    <span>+92 345 4021637</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/80">
+                    <MapPin className="w-4 h-4" />
+                    <span>Lahore, Pakistan</span>
+                  </div>
+                </div>
+                
+                {/* Social Links */}
+                <div className="mt-6">
+                  <a
+                    href="https://www.linkedin.com/in/KhalidKhanManager"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-sm"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+      {/* Mobile Navigation */}
+      <MobileNavigation />
+      
       {/* Top Banner Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-8 px-4 sm:px-6 lg:px-8">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-8 px-4 sm:px-6 lg:px-8 pt-20 lg:pt-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             {/* Left Side - Name and Position */}
@@ -72,7 +195,7 @@ export default function Home() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Professional Summary */}
-        <section className="mb-12">
+        <section id="summary" className="mb-12">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
               <User className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
@@ -85,7 +208,7 @@ export default function Home() {
         </section>
 
         {/* Professional Experience */}
-        <section className="mb-12">
+        <section id="experience" className="mb-12">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
               <Briefcase className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
@@ -147,7 +270,7 @@ export default function Home() {
         </section>
 
         {/* Education */}
-        <section className="mb-12">
+        <section id="education" className="mb-12">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
               <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
@@ -189,7 +312,7 @@ export default function Home() {
         </section>
 
         {/* Professional Development & Certifications */}
-        <section className="mb-12">
+        <section id="certifications" className="mb-12">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
               <Award className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
@@ -214,7 +337,7 @@ export default function Home() {
         </section>
 
         {/* Key Skills */}
-        <section className="mb-12">
+        <section id="skills" className="mb-12">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
               <Star className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
@@ -240,7 +363,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section className="mb-12">
+        <section id="contact" className="mb-12">
           <div className="bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl p-6 sm:p-8 text-white text-center">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">Ready to Connect?</h2>
             <p className="text-blue-100 mb-6 text-sm sm:text-base">
