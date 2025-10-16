@@ -17,21 +17,22 @@ function MobileNavigation() {
   return (
     <>
       {/* Mobile Header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-600 to-purple-700 shadow-lg">
+      <div className="xl:hidden fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-600 to-purple-700 shadow-lg">
         <div className="flex items-center justify-between px-4 py-3">
           <div className="text-white font-bold text-lg">Khalid Masood Khan</div>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+            className="text-white p-3 hover:bg-white/20 rounded-lg transition-all duration-200 border border-white/20 hover:border-white/40 hover:scale-105"
+            aria-label="Toggle navigation menu"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 z-40 bg-black/50" onClick={() => setIsOpen(false)}>
+        <div className="xl:hidden fixed inset-0 z-40 bg-black/50" onClick={() => setIsOpen(false)}>
           <div className="absolute right-0 top-0 h-full w-80 bg-gradient-to-b from-blue-600 to-purple-700 shadow-xl">
             <div className="p-6 pt-20">
               <nav className="space-y-4">
@@ -128,7 +129,7 @@ export default function Home() {
       <MobileNavigation />
       
       {/* Top Banner Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-8 px-4 sm:px-6 lg:px-8 pt-20 lg:pt-8">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-8 px-4 sm:px-6 lg:px-8 pt-20 xl:pt-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             {/* Left Side - Name and Position */}
