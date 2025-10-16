@@ -9,7 +9,6 @@ import {
   Linkedin, 
   Award, 
   Users, 
-  Target, 
   BookOpen, 
   GraduationCap, 
   Star, 
@@ -17,8 +16,7 @@ import {
   Briefcase, 
   Calendar, 
   Building,
-  CheckCircle,
-  ExternalLink
+  CheckCircle
 } from 'lucide-react';
 
 export default function Home() {
@@ -61,139 +59,137 @@ export default function Home() {
         </div>
       </motion.nav>
 
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 px-6 min-h-screen flex items-center">
+      {/* Top Banner Section */}
+      <section id="home" className="relative bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 py-16 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
-            >
-              <div className="space-y-4">
-                <motion.h1 
-                  initial={{ y: 50, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.2, duration: 0.8 }}
-                  className="text-5xl lg:text-7xl font-black text-white leading-tight"
-                >
-                  Strategic HR & Operations
-                  <motion.span 
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
-                    className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
-                  >
-                    Leader
-                  </motion.span>
-                </motion.h1>
-                <motion.p 
-                  initial={{ y: 30, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.4, duration: 0.8 }}
-                  className="text-xl text-blue-100 max-w-2xl"
-                >
-                  Driving Organizational Excellence & AI-Driven HR Transformation with 22+ years of progressive experience
-                </motion.p>
-              </div>
-              
-              <motion.div 
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="flex flex-wrap gap-4"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="flex flex-col lg:flex-row items-center justify-between gap-12"
+          >
+            {/* Left Content */}
+            <div className="lg:w-2/3 text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="mb-6"
               >
-                {[
-                  { icon: Award, text: "22+ Years Experience", color: "text-blue-400" },
-                  { icon: Users, text: "HR Leadership", color: "text-purple-400" },
-                  { icon: Target, text: "AI Integration", color: "text-green-400" }
-                ].map((item, index) => (
-                  <motion.div
-                    key={item.text}
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: 0.8 + index * 0.1, duration: 0.5 }}
-                    whileHover={{ scale: 1.05 }}
-                    className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"
-                  >
-                    <item.icon className={`w-5 h-5 ${item.color}`} />
-                    <span className="text-white font-medium">{item.text}</span>
-                  </motion.div>
-                ))}
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
+                  KHALID MASOOD KHAN
+                </h1>
+                <div className="w-32 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto lg:mx-0 mb-6"></div>
+                <h2 className="text-2xl md:text-3xl text-blue-300 font-semibold mb-2">
+                  Senior Manager – Operational Excellence
+                </h2>
+                <p className="text-xl text-gray-300 font-light mb-8">
+                  Strategic HR & Operations Leader | Organizational Excellence | AI-Driven HR Transformation
+                </p>
               </motion.div>
 
-              <motion.div 
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4"
+              {/* Contact Info */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8"
               >
-                <motion.a
-                  href="#contact"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl"
-                >
-                  <Mail className="w-5 h-5 mr-2" />
-                  Get In Touch
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </motion.a>
+                <div className="flex items-center justify-center lg:justify-start gap-3 text-gray-300">
+                  <Mail className="w-5 h-5 text-blue-400" />
+                  <span className="text-lg">khalid_masood79@hotmail.com</span>
+                </div>
+                <div className="flex items-center justify-center lg:justify-start gap-3 text-gray-300">
+                  <Phone className="w-5 h-5 text-blue-400" />
+                  <span className="text-lg">+92 300 8454448</span>
+                </div>
+                <div className="flex items-center justify-center lg:justify-start gap-3 text-gray-300">
+                  <Phone className="w-5 h-5 text-blue-400" />
+                  <span className="text-lg">+92 345 4021637</span>
+                </div>
+                <div className="flex items-center justify-center lg:justify-start gap-3 text-gray-300">
+                  <MapPin className="w-5 h-5 text-blue-400" />
+                  <span className="text-lg">Lahore, Pakistan</span>
+                </div>
+              </motion.div>
+
+              {/* Action Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              >
                 <motion.a
                   href="https://www.linkedin.com/in/KhalidKhanManager"
-            target="_blank"
-            rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.4)" }}
                   whileTap={{ scale: 0.95 }}
-                  className="group inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold rounded-xl transition-all duration-300 border border-white/20"
+                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg"
                 >
-                  <Linkedin className="w-5 h-5 mr-2" />
-                  LinkedIn
-                  <ExternalLink className="w-4 h-4 ml-2" />
+                  <Linkedin className="w-6 h-6" />
+                  Connect on LinkedIn
+                  <motion.div
+                    className="w-2 h-2 bg-white rounded-full"
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.8, 1, 0.8] }}
+                    transition={{ repeat: Infinity, duration: 1.5 }}
+                  ></motion.div>
+                </motion.a>
+                <motion.a
+                  href="#contact"
+                  whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.4)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 border border-white/20"
+                >
+                  <Mail className="w-6 h-6" />
+                  Get In Touch
                 </motion.a>
               </motion.div>
-            </motion.div>
+            </div>
 
-            <motion.div 
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="relative"
+            {/* Right Content - Profile Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+              className="lg:w-1/3 relative flex justify-center items-center"
             >
-              <div className="relative z-10">
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-          >
-            <Image
+              <div className="relative">
+                <div className="w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-blue-500/50">
+                  <Image
                     src="/khalid-masood-khan.png"
-                    alt="Khalid Masood Khan - Strategic HR & Operations Leader"
-                    width={500}
-                    height={600}
-                    className="rounded-2xl shadow-2xl"
-                    priority
+                    alt="Khalid Masood Khan Profile"
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
-                </motion.div>
-                <motion.div 
-                  initial={{ scale: 0, rotate: -180 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 1, duration: 0.8 }}
-                  className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center"
+                </div>
+                {/* Floating badges */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1, duration: 0.5 }}
+                  className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-4"
                 >
-                  <Award className="w-12 h-12 text-white" />
-                </motion.div>
-                <motion.div 
-                  initial={{ scale: 0, rotate: 180 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 1.2, duration: 0.8 }}
-                  className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center"
-                >
-                  <Target className="w-10 h-10 text-white" />
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="bg-white/20 backdrop-blur-md p-4 rounded-xl shadow-lg flex items-center gap-2 text-blue-200"
+                  >
+                    <Award className="w-6 h-6 text-blue-400" />
+                    <span className="font-semibold">22+ Years Exp.</span>
+                  </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="bg-white/20 backdrop-blur-md p-4 rounded-xl shadow-lg flex items-center gap-2 text-blue-200"
+                  >
+                    <Star className="w-6 h-6 text-yellow-400" />
+                    <span className="font-semibold">AI-Driven HR</span>
+                  </motion.div>
                 </motion.div>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-3xl"></div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
