@@ -388,24 +388,35 @@ export default function Home() {
                 {
                   title: "Corporate & Business Support Executive",
                   company: "Panasian Group of Companies",
-                  period: "2013-2016",
+                  period: "Jan 2013 – Aug 2016",
                   icon: Building,
                   color: "from-green-500 to-teal-500",
                   items: [
-                    "Coordinated administrative and corporate functions",
-                    "Implemented business process standardization",
-                    "Delivered training programs for workforce efficiency"
+                    "Coordinated administrative and corporate functions across departments to improve operational synergy",
+                    "Implemented business process standardization using KPI and SLA-driven insights",
+                    "Delivered training programs to enhance workforce efficiency and professional skills",
+                    "Supported compliance, internal communication, and cross-functional project alignment",
+                    "Arranged and managed high-level corporate meetings and leadership team interactions"
                   ]
                 },
                 {
-                  title: "Secretary to Director",
+                  title: "Secretary to Director Professional Development",
                   company: "The City School System",
-                  period: "2012-2013",
+                  period: "Feb 2012 – Jan 2013",
                   icon: BookOpen,
                   color: "from-purple-500 to-pink-500",
                   items: [
-                    "Supported director-level HR operations",
-                    "Focus on organizational capability enhancement"
+                    "Supported director-level HR and training operations with focus on organizational capability enhancement"
+                  ]
+                },
+                {
+                  title: "Customer Services & Sales Officer",
+                  company: "Telenor Pakistan (Pvt.) Ltd",
+                  period: "Jan 2007 – Mar 2011",
+                  icon: Users,
+                  color: "from-orange-500 to-red-500",
+                  items: [
+                    "Delivered customer engagement excellence and developed communication and negotiation skills foundational to HR practice"
                   ]
                 }
               ].map((role, index) => (
@@ -460,7 +471,7 @@ export default function Home() {
             {[
               {
                 icon: GraduationCap,
-                title: "MBA (HRM)",
+                title: "Master of Business Administration (HRM Specialization)",
                 institution: "University of Sargodha",
                 year: "2015",
                 color: "from-green-500/20 to-teal-500/20",
@@ -470,7 +481,7 @@ export default function Home() {
               },
               {
                 icon: BookOpen,
-                title: "B.Com",
+                title: "Bachelor of Commerce (Humanitarian Group)",
                 institution: "University of the Punjab",
                 year: "2000",
                 color: "from-purple-500/20 to-pink-500/20",
@@ -486,7 +497,38 @@ export default function Home() {
                 color: "from-blue-500/20 to-indigo-500/20",
                 borderColor: "border-blue-400/20",
                 iconColor: "text-blue-400",
-                textColor: "text-blue-300"
+                textColor: "text-blue-300",
+                description: "Expertise in applying Generative AI for HR automation, analytics, and decision support"
+              },
+              {
+                icon: BookOpen,
+                title: "Multiple Diplomas & Certificates in Computer Sciences",
+                institution: "Modern College of Computer Sciences, Lahore",
+                year: "2000–2002",
+                color: "from-indigo-500/20 to-blue-500/20",
+                borderColor: "border-indigo-400/20",
+                iconColor: "text-indigo-400",
+                textColor: "text-indigo-300"
+              },
+              {
+                icon: GraduationCap,
+                title: "Higher Secondary School Certificate (Pre-Medical)",
+                institution: "Federal Board of Intermediate & Secondary Education",
+                year: "1998",
+                color: "from-teal-500/20 to-green-500/20",
+                borderColor: "border-teal-400/20",
+                iconColor: "text-teal-400",
+                textColor: "text-teal-300"
+              },
+              {
+                icon: GraduationCap,
+                title: "Secondary School Certificate (Science)",
+                institution: "Federal Board of Intermediate & Secondary Education",
+                year: "1996",
+                color: "from-emerald-500/20 to-teal-500/20",
+                borderColor: "border-emerald-400/20",
+                iconColor: "text-emerald-400",
+                textColor: "text-emerald-300"
               }
             ].map((edu, index) => (
               <motion.div
@@ -503,7 +545,117 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white">{edu.title}</h3>
                 </div>
                 <p className={`${edu.textColor} font-semibold mb-2`}>{edu.institution}</p>
-                <p className="text-white/80 text-sm">{edu.year}</p>
+                <p className="text-white/80 text-sm mb-2">{edu.year}</p>
+                {edu.description && (
+                  <p className="text-white/70 text-sm italic">{edu.description}</p>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Professional Development & Certifications Section */}
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-800/30 to-slate-900/30">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl font-bold text-white mb-4">
+              Professional Development & Certifications
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "AI for Professionals",
+                institution: "LUMS",
+                year: "2025",
+                description: "Expertise in applying Generative AI for HR automation, analytics, and decision support",
+                icon: Award,
+                color: "from-blue-500/20 to-indigo-500/20",
+                borderColor: "border-blue-400/20",
+                iconColor: "text-blue-400"
+              },
+              {
+                title: "Corporate Governance, Leadership Development, and Operational Transformation",
+                institution: "Various Institutions",
+                year: "Ongoing",
+                description: "Comprehensive training in corporate governance, leadership development, and operational transformation",
+                icon: Users,
+                color: "from-purple-500/20 to-pink-500/20",
+                borderColor: "border-purple-400/20",
+                iconColor: "text-purple-400"
+              }
+            ].map((cert, index) => (
+              <motion.div
+                key={index}
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ delay: index * 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className={`bg-gradient-to-br ${cert.color} backdrop-blur-sm rounded-2xl p-8 border ${cert.borderColor}`}
+              >
+                <div className="flex items-center mb-4">
+                  <cert.icon className={`w-8 h-8 ${cert.iconColor} mr-3`} />
+                  <h3 className="text-xl font-bold text-white">{cert.title}</h3>
+                </div>
+                <p className="text-gray-300 font-semibold mb-2">{cert.institution}</p>
+                <p className="text-white/80 text-sm mb-3">{cert.year}</p>
+                <p className="text-white/70 text-sm italic">{cert.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Skills Section */}
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-900/30 to-slate-800/30">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl font-bold text-white mb-4">
+              Key Skills
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              "Strategic HR Leadership",
+              "AI-Powered HR Analytics", 
+              "Employee Engagement & Culture Building",
+              "Learning & Development (L&D)",
+              "Performance Management",
+              "Change Management & Organizational Transformation",
+              "Process Re-engineering & Operational Excellence",
+              "Executive Advisory & Stakeholder Management"
+            ].map((skill, index) => (
+              <motion.div
+                key={index}
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-xl p-6 border border-blue-400/20 text-center"
+              >
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Star className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-white font-semibold text-sm leading-tight">{skill}</h3>
               </motion.div>
             ))}
           </div>
@@ -554,6 +706,13 @@ export default function Home() {
                         value: "+92 300 8454448",
                         href: "tel:+923008454448",
                         color: "from-green-500 to-teal-500"
+                      },
+                      {
+                        icon: Phone,
+                        label: "Phone",
+                        value: "+92 345 4021637",
+                        href: "tel:+923454021637",
+                        color: "from-purple-500 to-pink-500"
                       },
                       {
                         icon: MapPin,
