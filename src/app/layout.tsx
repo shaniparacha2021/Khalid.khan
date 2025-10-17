@@ -6,12 +6,12 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Khalid Masood Khan - Strategic HR & Operations Leader | AI-Driven HR Transformation",
-  description: "Strategic HR and Operations Leader with over 22 years of progressive experience driving Human Resource Transformation, Organizational Excellence, and Corporate Governance across diversified industries.",
+  description: "Strategic HR and Operations Leader with over 22 years of progressive experience driving Organizational Excellence, Human Resource Transformation, and Corporate Governance across diversified industries.",
   keywords: "HR Leader, Operations Management, AI-Driven HR, Organizational Excellence, Strategic HR, Human Resources, Pakistan, Lahore, Khalid Masood Khan",
   authors: [{ name: "Khalid Masood Khan" }],
   openGraph: {
     title: "Khalid Masood Khan - Strategic HR & Operations Leader",
-    description: "Strategic HR and Operations Leader with over 22 years of progressive experience driving Human Resource Transformation, Organizational Excellence, and AI-Driven HR Transformation.",
+    description: "Strategic HR and Operations Leader with over 22 years of progressive experience driving Organizational Excellence, Human Resource Transformation, and AI-Driven HR Transformation.",
     type: "website",
     locale: "en_US",
     images: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Khalid Masood Khan - Strategic HR & Operations Leader",
-    description: "Strategic HR and Operations Leader with over 22 years of progressive experience driving Human Resource Transformation, Organizational Excellence, and AI-Driven HR Transformation.",
+    description: "Strategic HR and Operations Leader with over 22 years of progressive experience driving Organizational Excellence, Human Resource Transformation, and AI-Driven HR Transformation.",
     images: ["/khalid-masood-khan.png"],
   },
   robots: {
@@ -52,7 +52,7 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Khalid Masood Khan",
               "jobTitle": "Strategic HR & Operations Leader",
-              "description": "Strategic HR and Operations Leader with over 22 years of progressive experience driving Human Resource Transformation, Organizational Excellence, and Corporate Governance across diversified industries.",
+              "description": "Strategic HR and Operations Leader with over 22 years of progressive experience driving Organizational Excellence, Human Resource Transformation, and Corporate Governance across diversified industries.",
               "email": "khalid_masood79@hotmail.com",
               "telephone": ["+92 300 8454448", "+92 345 4021637"],
               "address": {
