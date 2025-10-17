@@ -203,7 +203,7 @@ export default function Home() {
               Professional Summary
             </h2>
             <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
-              Strategic HR and Operations Leader with over 22 years of progressive experience driving Organizational Excellence, Human Resource Transformation, and Corporate Governance across diversified industries.
+              Strategic HR and Operations Leader with over 22 years of progressive experience driving Human Resource Transformation, Organizational Excellence, and Corporate Governance across diversified industries.
             </p>
             <p className="text-gray-200 text-sm sm:text-base leading-relaxed mt-4">
               Adept at developing and implementing people-centric strategies that enhance productivity, engagement, and business performance through data-driven and technology-enabled HR practices.
@@ -354,7 +354,8 @@ export default function Home() {
                 "Organizational Development",
                 "Change Management",
                 "Talent Acquisition",
-                "Performance Management"
+                "Performance Management",
+                "Operational Excellence"
               ].map((skill, index) => (
                 <div key={index} className="bg-white/5 rounded-lg p-4 text-center">
                   <span className="text-white text-sm sm:text-base font-medium">{skill}</span>
