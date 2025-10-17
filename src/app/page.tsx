@@ -203,7 +203,7 @@ export default function Home() {
               Professional Summary
             </h2>
             <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
-              Strategic HR and Operations Leader with over 22 years of progressive experience driving Organizational Excellence, Human Resource Transformation, and Corporate Governance across diversified industries. Adept at developing and implementing people-centric strategies that enhance productivity, engagement, and business performance. Having expertise in Artificial Intelligence (AI) and its practical implementation across multiple HR functions, including talent acquisition, performance management, learning & development, and employee engagement, to enhance efficiency, decision-making, and organizational capability. Recognized for leading cross-functional teams, aligning human capital strategies with corporate goals, and fostering cultures of innovation and continuous improvement through data-driven and technology-enabled HR practices.
+              Strategic HR and Operations Leader with over 22 years of progressive experience driving Human Resource Transformation, Organizational Excellence, and Corporate Governance across diversified industries. Adept at developing and implementing people-centric strategies that enhance productivity, engagement, and business performance. Having expertise in Artificial Intelligence (AI) and its practical implementation across multiple HR functions, including talent acquisition, performance management, learning & development, and employee engagement, to enhance efficiency, decision-making, and organizational capability. Recognized for leading cross-functional teams, aligning human capital strategies with corporate goals, and fostering cultures of innovation and continuous improvement through data-driven and technology-enabled HR practices.
             </p>
           </div>
         </section>
@@ -353,6 +353,7 @@ export default function Home() {
                 "Performance Management",
                 "Change Management & Organizational Transformation",
                 "Process Re-engineering & Operational Excellence",
+                "Operational Excellence",
                 "Executive Advisory & Stakeholder Management"
               ].map((skill, index) => (
                 <div key={index} className="bg-white/5 rounded-lg p-4 text-center">
