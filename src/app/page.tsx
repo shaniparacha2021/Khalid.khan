@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Linkedin, User, Briefcase, GraduationCap, Award, Star, Menu, X, Globe, Languages, Target, Users, TrendingUp, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, User, Briefcase, GraduationCap, Award, Star, Menu, X, Globe, Languages, Target, TrendingUp, CheckCircle, Home, About, Services, Blog, Contact, ArrowRight, Download, Calendar, MessageCircle, Users } from "lucide-react";
 
 // Mobile Navigation Component
 function MobileNavigation() {
@@ -38,11 +38,25 @@ function MobileNavigation() {
             <div className="p-6 pt-20">
               <nav className="space-y-4">
                 <button
-                  onClick={() => scrollToSection('summary')}
+                  onClick={() => scrollToSection('home')}
                   className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
                 >
-                  <User className="w-5 h-5" />
-                  Professional Summary
+                  <Home className="w-5 h-5" />
+                  Home
+                </button>
+                <button
+                  onClick={() => scrollToSection('about')}
+                  className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
+                >
+                  <About className="w-5 h-5" />
+                  About
+                </button>
+                <button
+                  onClick={() => scrollToSection('services')}
+                  className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
+                >
+                  <Services className="w-5 h-5" />
+                  Services
                 </button>
                 <button
                   onClick={() => scrollToSection('experience')}
@@ -70,7 +84,7 @@ function MobileNavigation() {
                   className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
                 >
                   <Star className="w-5 h-5" />
-                  Key Expertise
+                  Expertise
                 </button>
                 <button
                   onClick={() => scrollToSection('languages')}
@@ -83,7 +97,7 @@ function MobileNavigation() {
                   onClick={() => scrollToSection('contact')}
                   className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
                 >
-                  <Mail className="w-5 h-5" />
+                  <Contact className="w-5 h-5" />
                   Contact
                 </button>
               </nav>
@@ -132,8 +146,8 @@ export default function Home() {
       {/* Mobile Navigation */}
       <MobileNavigation />
       
-      {/* Top Banner Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-8 px-4 sm:px-6 lg:px-8 pt-20 xl:pt-8">
+      {/* Hero Section */}
+      <section id="home" className="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-8 px-4 sm:px-6 lg:px-8 pt-20 xl:pt-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             {/* Left Side - Name and Position */}
@@ -195,16 +209,16 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Professional Summary */}
-        <section id="summary" className="mb-12">
+        {/* About Section */}
+        <section id="about" className="mb-12">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
               <User className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
-              Professional Summary
+              About Me
             </h2>
             <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
               Highly experienced and service-oriented management professional with 22 years progressive work exposure in Operational Excellence & Compliance, Human Resource Management, Project Monitoring & Follow ups, Corporate Governance, Executive Office Management, Business Support & Coordination, General Administration, Local and International Correspondence, End to end Travel & Logistic Support, Customer Services.
@@ -237,6 +251,125 @@ export default function Home() {
                   <li>• AI-Driven HR Transformation</li>
                   <li>• Operational Excellence</li>
                   <li>• Corporate Governance</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section id="services" className="mb-12">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <Services className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
+              Professional Services
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl p-6 border border-blue-400/30 hover:border-blue-400/50 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                    <Target className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">Strategic HR Consulting</h3>
+                </div>
+                <p className="text-gray-200 text-sm leading-relaxed mb-4">
+                  Comprehensive HR strategy development, organizational design, and workforce planning to drive business success.
+                </p>
+                <ul className="text-gray-300 text-xs space-y-1">
+                  <li>• Strategic Workforce Planning</li>
+                  <li>• Organizational Development</li>
+                  <li>• Change Management</li>
+                  <li>• HR Policy Development</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-xl p-6 border border-green-400/30 hover:border-green-400/50 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-green-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">AI-Driven HR Solutions</h3>
+                </div>
+                <p className="text-gray-200 text-sm leading-relaxed mb-4">
+                  Modern AI-powered HR automation, analytics, and decision support systems for enhanced efficiency.
+                </p>
+                <ul className="text-gray-300 text-xs space-y-1">
+                  <li>• AI-Assisted Recruitment</li>
+                  <li>• Performance Analytics</li>
+                  <li>• HR Process Automation</li>
+                  <li>• Predictive Workforce Analytics</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl p-6 border border-purple-400/30 hover:border-purple-400/50 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                    <Award className="w-6 h-6 text-purple-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">Operational Excellence</h3>
+                </div>
+                <p className="text-gray-200 text-sm leading-relaxed mb-4">
+                  Process optimization, continuous improvement, and operational transformation to maximize efficiency.
+                </p>
+                <ul className="text-gray-300 text-xs space-y-1">
+                  <li>• Process Optimization</li>
+                  <li>• Continuous Improvement</li>
+                  <li>• Quality Management</li>
+                  <li>• Operational Transformation</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-xl p-6 border border-orange-400/30 hover:border-orange-400/50 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center">
+                    <Briefcase className="w-6 h-6 text-orange-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">Executive Advisory</h3>
+                </div>
+                <p className="text-gray-200 text-sm leading-relaxed mb-4">
+                  Strategic advisory services for senior leadership on HR, governance, and operational matters.
+                </p>
+                <ul className="text-gray-300 text-xs space-y-1">
+                  <li>• Corporate Governance</li>
+                  <li>• Executive Coaching</li>
+                  <li>• Strategic Planning</li>
+                  <li>• Board Advisory</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-xl p-6 border border-teal-400/30 hover:border-teal-400/50 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center">
+                    <Users className="w-6 h-6 text-teal-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">Talent Management</h3>
+                </div>
+                <p className="text-gray-200 text-sm leading-relaxed mb-4">
+                  End-to-end talent acquisition, development, and retention strategies for organizational growth.
+                </p>
+                <ul className="text-gray-300 text-xs space-y-1">
+                  <li>• Talent Acquisition</li>
+                  <li>• Performance Management</li>
+                  <li>• Leadership Development</li>
+                  <li>• Succession Planning</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-xl p-6 border border-indigo-400/30 hover:border-indigo-400/50 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center">
+                    <MessageCircle className="w-6 h-6 text-indigo-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">Training & Development</h3>
+                </div>
+                <p className="text-gray-200 text-sm leading-relaxed mb-4">
+                  Customized training programs and professional development initiatives for organizational capability building.
+                </p>
+                <ul className="text-gray-300 text-xs space-y-1">
+                  <li>• Leadership Training</li>
+                  <li>• Skills Development</li>
+                  <li>• Team Building</li>
+                  <li>• Professional Coaching</li>
                 </ul>
               </div>
             </div>
@@ -284,7 +417,7 @@ export default function Home() {
                     <li>Leading projects aimed at improving operational efficiency and reducing costs</li>
                     <li>Conduct regular project reviews to assure accomplishment of key results</li>
                     <li>Provide leadership and direction to project teams for step changes and breakthrough levels of improvement</li>
-                  </ul>
+                </ul>
                 </div>
               </div>
 
@@ -294,7 +427,7 @@ export default function Home() {
                 </h3>
                 <p className="text-green-200 text-sm sm:text-base mb-3">January 2013 – August 2016 (3 years 8 months) | Lahore</p>
                 <ul className="text-gray-200 text-sm space-y-1 list-disc list-inside">
-                  <li>Complete Management of CEO's Office independently</li>
+                  <li>Complete Management of CEO&apos;s Office independently</li>
                   <li>Complete Travel and Logistic Support at Group Level</li>
                   <li>Visa Processing, Hotel Reservations at Group Level</li>
                   <li>Scheduling and arranging important meetings and conferences whenever required</li>
@@ -519,46 +652,120 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="mb-12">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl p-6 sm:p-8 text-white text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Ready to Connect?</h2>
-            <p className="text-blue-100 mb-6 text-sm sm:text-base">
-              Let&apos;s discuss how I can contribute to your organization&apos;s success.
+        {/* Call to Action Section */}
+        <section className="mb-12">
+          <div className="bg-gradient-to-r from-indigo-600 to-purple-700 rounded-2xl p-8 sm:p-12 text-white text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Transform Your Organization?</h2>
+            <p className="text-indigo-100 mb-8 text-lg max-w-3xl mx-auto">
+              Let&apos;s discuss how my 22+ years of experience in HR transformation, operational excellence, and AI-driven solutions can drive your organization&apos;s success.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a
                 href="mailto:khalid_masood79@hotmail.com"
-                className="inline-flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                className="inline-flex items-center gap-2 bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-indigo-50 transition-colors text-lg"
               >
                 <Mail className="w-5 h-5" />
-                Email Me
+                Schedule a Consultation
               </a>
               <a
                 href="tel:+923008454448"
-                className="inline-flex items-center gap-2 bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors"
+                className="inline-flex items-center gap-2 bg-indigo-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-indigo-600 transition-colors text-lg"
               >
                 <Phone className="w-5 h-5" />
-                Call Me
+                Call Now
               </a>
-              <a
-                href="https://www.linkedin.com/in/khalidkhanmanager"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
-                LinkedIn
-              </a>
-              <a
-                href="https://khalid-khan.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-purple-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-600 transition-colors"
-              >
-                <Globe className="w-5 h-5" />
-                Personal Website
-              </a>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+              <div className="bg-white/10 rounded-lg p-4">
+                <div className="text-2xl font-bold text-white mb-1">22+</div>
+                <div className="text-indigo-200 text-sm">Years Experience</div>
+              </div>
+              <div className="bg-white/10 rounded-lg p-4">
+                <div className="text-2xl font-bold text-white mb-1">100+</div>
+                <div className="text-indigo-200 text-sm">Projects Completed</div>
+              </div>
+              <div className="bg-white/10 rounded-lg p-4">
+                <div className="text-2xl font-bold text-white mb-1">50+</div>
+                <div className="text-indigo-200 text-sm">Organizations Served</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="mb-12">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <Contact className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
+              Get In Touch
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-4">Contact Information</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <Mail className="w-5 h-5 text-blue-400" />
+                    <div>
+                      <div className="text-white font-medium">Email</div>
+                      <div className="text-gray-300">khalid_masood79@hotmail.com</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-blue-400" />
+                    <div>
+                      <div className="text-white font-medium">Phone</div>
+                      <div className="text-gray-300">+92 300 8454448 (Mobile)</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <MapPin className="w-5 h-5 text-blue-400" />
+                    <div>
+                      <div className="text-white font-medium">Location</div>
+                      <div className="text-gray-300">Lahore, Pakistan</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Linkedin className="w-5 h-5 text-blue-400" />
+                    <div>
+                      <div className="text-white font-medium">LinkedIn</div>
+                      <a href="https://www.linkedin.com/in/khalidkhanmanager" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">
+                        linkedin.com/in/khalidkhanmanager
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-4">Quick Actions</h3>
+                <div className="space-y-3">
+                  <a
+                    href="mailto:khalid_masood79@hotmail.com"
+                    className="flex items-center gap-3 p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                  >
+                    <Mail className="w-5 h-5 text-blue-400" />
+                    <span className="text-white">Send Email</span>
+                    <ArrowRight className="w-4 h-4 text-gray-400 ml-auto" />
+                  </a>
+                  <a
+                    href="tel:+923008454448"
+                    className="flex items-center gap-3 p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                  >
+                    <Phone className="w-5 h-5 text-green-400" />
+                    <span className="text-white">Call Now</span>
+                    <ArrowRight className="w-4 h-4 text-gray-400 ml-auto" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/khalidkhanmanager"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                  >
+                    <Linkedin className="w-5 h-5 text-blue-400" />
+                    <span className="text-white">Connect on LinkedIn</span>
+                    <ArrowRight className="w-4 h-4 text-gray-400 ml-auto" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
