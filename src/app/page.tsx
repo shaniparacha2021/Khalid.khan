@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Linkedin, User, Briefcase, GraduationCap, Award, Star, Menu, X, Globe, Languages, Target, TrendingUp, CheckCircle, Home, About, Services, Blog, Contact, ArrowRight, Download, Calendar, MessageCircle, Users } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, User, Briefcase, GraduationCap, Award, Star, Menu, X, Globe, Languages, Target, TrendingUp, CheckCircle, Home as HomeIcon, User as AboutIcon, Settings as ServicesIcon, BookOpen as BlogIcon, Contact as ContactIcon, ArrowRight, Download, Calendar, MessageCircle, Users } from "lucide-react";
 
 // Mobile Navigation Component
 function MobileNavigation() {
@@ -41,21 +41,21 @@ function MobileNavigation() {
                   onClick={() => scrollToSection('home')}
                   className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
                 >
-                  <Home className="w-5 h-5" />
+                  <HomeIcon className="w-5 h-5" />
                   Home
                 </button>
                 <button
                   onClick={() => scrollToSection('about')}
                   className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
                 >
-                  <About className="w-5 h-5" />
+                  <AboutIcon className="w-5 h-5" />
                   About
                 </button>
                 <button
                   onClick={() => scrollToSection('services')}
                   className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
                 >
-                  <Services className="w-5 h-5" />
+                  <ServicesIcon className="w-5 h-5" />
                   Services
                 </button>
                 <button
@@ -97,7 +97,7 @@ function MobileNavigation() {
                   onClick={() => scrollToSection('contact')}
                   className="w-full text-left text-white hover:bg-white/10 p-3 rounded-lg transition-colors flex items-center gap-3"
                 >
-                  <Contact className="w-5 h-5" />
+                  <ContactIcon className="w-5 h-5" />
                   Contact
                 </button>
               </nav>
@@ -261,7 +261,7 @@ export default function Home() {
         <section id="services" className="mb-12">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
-              <Services className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
+              <ServicesIcon className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
               Professional Services
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -666,8 +666,8 @@ export default function Home() {
               >
                 <Mail className="w-5 h-5" />
                 Schedule a Consultation
-              </a>
-              <a
+        </a>
+        <a
                 href="tel:+923008454448"
                 className="inline-flex items-center gap-2 bg-indigo-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-indigo-600 transition-colors text-lg"
               >
@@ -696,7 +696,7 @@ export default function Home() {
         <section id="contact" className="mb-12">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
-              <Contact className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
+              <ContactIcon className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
               Get In Touch
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
