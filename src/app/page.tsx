@@ -1,10 +1,11 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Mail, Phone, MapPin, Linkedin, User, Briefcase, GraduationCap, Award, Star, Menu, X } from "lucide-react";
 
 // Mobile Navigation Component
 function MobileNavigation() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -160,7 +161,7 @@ export default function Home() {
             <div className="flex-shrink-0">
               <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 border-white shadow-2xl">
         <Image
-                  src="/Khalid Masood Khan.jpg"
+                  src="/khalid-masood-khan.png"
                   alt="Khalid Masood Khan"
                   width={200}
                   height={200}
