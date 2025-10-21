@@ -197,6 +197,9 @@ export default function Portfolio() {
           Adept at coordinating multicultural teams, driving performance, and
           implementing modern HR practices to achieve organizational success.
         </p>
+        <p>
+        Exposed in diversified industries and also possess ability to perform well under work pressure, coordinate with multicultural personnel including various clients, meet tight deadlines, deal tactfully with various concerned agencies and surpass performance parameters. Self-motivated and result oriented with excellent communication, leadership, problem solving, decision making, time management and interpersonal skills.
+        </p>
       </div>
 
       {/* Contact Info */}
