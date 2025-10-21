@@ -178,14 +178,7 @@ export default function Portfolio() {
                   <div className="text-2xl font-bold text-white">22+</div>
                   <div className="text-blue-200 text-sm">Years Experience</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-2xl font-bold text-white">100+</div>
-                  <div className="text-blue-200 text-sm">Projects Led</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-2xl font-bold text-white">50+</div>
-                  <div className="text-blue-200 text-sm">Organizations</div>
-                </div>
+
               </div>
               
               {/* Contact Info */}
