@@ -176,7 +176,12 @@ export default function Portfolio() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
                   <div className="text-2xl font-bold text-white">About Me</div>
-                  <div className="text-blue-200 text-sm">Years Experience</div>
+                  <div className="text-blue-200 text-sm"> <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
+              Highly experienced and service-oriented management professional with 22 years progressive work exposure in Operational Excellence & Compliance, Human Resource Management, Project Monitoring & Follow ups, Corporate Governance, Executive Office Management, Business Support & Coordination, General Administration, Local and International Correspondence, End to end Travel & Logistic Support, Customer Services.
+            </p>
+            <p className="text-gray-200 text-sm sm:text-base leading-relaxed mt-4">
+              Exposed in diversified industries and also possess ability to perform well under work pressure, coordinate with multicultural personnel including various clients, meet tight deadlines, deal tactfully with various concerned agencies and surpass performance parameters. Self-motivated and result oriented with excellent communication, leadership, problem solving, decision making, time management and interpersonal skills.
+            </p></div>
                 </div>
 
               </div>
@@ -251,7 +256,7 @@ export default function Portfolio() {
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
               <User className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
-              About Me
+              Professional Highlights
             </h2>
             
             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -705,12 +710,7 @@ export default function Portfolio() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
               <div className="bg-white/10 rounded-lg p-4">
-                <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
-              Highly experienced and service-oriented management professional with 22 years progressive work exposure in Operational Excellence & Compliance, Human Resource Management, Project Monitoring & Follow ups, Corporate Governance, Executive Office Management, Business Support & Coordination, General Administration, Local and International Correspondence, End to end Travel & Logistic Support, Customer Services.
-            </p>
-            <p className="text-gray-200 text-sm sm:text-base leading-relaxed mt-4">
-              Exposed in diversified industries and also possess ability to perform well under work pressure, coordinate with multicultural personnel including various clients, meet tight deadlines, deal tactfully with various concerned agencies and surpass performance parameters. Self-motivated and result oriented with excellent communication, leadership, problem solving, decision making, time management and interpersonal skills.
-            </p>
+               
               </div>
               <div className="bg-white/10 rounded-lg p-4">
                 <div className="text-2xl font-bold text-white mb-1">100+</div>
