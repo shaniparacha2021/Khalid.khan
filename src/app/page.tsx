@@ -150,83 +150,103 @@ export default function Portfolio() {
      {/* Hero Section */}
 <section
   id="home"
-  className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20 px-6 lg:px-12 overflow-hidden"
+  className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20 px-6 sm:px-10 lg:px-16"
 >
-  {/* Background Animation */}
+  {/* Floating Elements (Stars & Balloons) */}
   <div className="absolute inset-0 overflow-hidden">
-    <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-    <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    {/* Soft light balloons */}
+    <div className="absolute w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float-slow top-10 left-10"></div>
+    <div className="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float-delayed bottom-10 right-10"></div>
+    <div className="absolute w-64 h-64 bg-indigo-400/10 rounded-full blur-3xl animate-float-mid top-1/2 left-1/2 -translate-x-1/2"></div>
+
+    {/* Twinkling stars */}
+    <div className="absolute inset-0">
+      {[...Array(25)].map((_, i) => (
+        <div
+          key={i}
+          className="absolute w-1 h-1 bg-white rounded-full opacity-70 animate-twinkle"
+          style={{
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 5}s`,
+            animationDuration: `${3 + Math.random() * 5}s`,
+          }}
+        ></div>
+      ))}
+    </div>
   </div>
 
+  {/* Main Content */}
   <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
     {/* Left - Profile Image */}
     <div className="relative group flex-shrink-0">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition"></div>
-      <div className="relative w-56 h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl group-hover:border-white/50 transition-all duration-500 group-hover:scale-105">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-all duration-700"></div>
+      <div className="relative w-52 h-52 sm:w-60 sm:h-60 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl group-hover:border-white/50 transition-all duration-700 group-hover:scale-105">
         <Image
           src="/khalid-masood-khan.png"
           alt="Khalid Masood Khan"
-          width={260}
-          height={260}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          width={280}
+          height={280}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           priority
         />
       </div>
     </div>
 
     {/* Right - Info */}
-    <div className="flex-1 space-y-6">
+    <div className="flex-1 space-y-6 text-center lg:text-left">
       <div>
-        <h1 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight transition-all duration-700 hover:scale-[1.01]">
           KHALID MASOOD KHAN
         </h1>
-        <p className="text-2xl lg:text-3xl text-blue-100 font-medium mt-2">
+        <p className="text-xl sm:text-2xl lg:text-3xl text-blue-100 font-medium mt-2">
           Strategic HR & Operations Leader
         </p>
-        <p className="text-lg text-blue-200 font-light">
+        <p className="text-base sm:text-lg text-blue-200 font-light">
           AI-Driven HR Transformation | Organizational Excellence
         </p>
       </div>
 
-      {/* About Me Summary */}
-      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20">
+      {/* About Summary */}
+      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20 hover:bg-white/15 transition-all duration-500">
         <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
-          Experienced and service-oriented management professional with 22 years
-          of progressive work in Operational Excellence, Human Resource
-          Management, Corporate Governance, and Executive Office Operations.
-          Adept at coordinating multicultural teams, driving performance, and
-          implementing modern HR practices to achieve organizational success.
+          Experienced management professional with 22 years of progressive
+          expertise in HR, Operations, and Corporate Governance. Skilled in
+          implementing AI-driven HR solutions, fostering team development, and
+          optimizing organizational performance.
         </p>
-        <p>
-        Exposed in diversified industries and also possess ability to perform well under work pressure, coordinate with multicultural personnel including various clients, meet tight deadlines, deal tactfully with various concerned agencies and surpass performance parameters. Self-motivated and result oriented with excellent communication, leadership, problem solving, decision making, time management and interpersonal skills.
+        <p className="text-gray-300 text-sm sm:text-base leading-relaxed mt-3">
+          Proactive, adaptable, and performance-oriented with strong leadership,
+          communication, and decision-making capabilities across diverse
+          industries.
         </p>
       </div>
 
       {/* Contact Info */}
-      <div className="flex flex-wrap gap-6 text-blue-100">
-        <div className="flex items-center gap-2">
-          <Mail className="w-5 h-5" />
+      <div className="flex flex-wrap justify-center lg:justify-start gap-6 text-blue-100 mt-4">
+        <div className="flex items-center gap-2 hover:text-white transition">
+          <Mail className="w-5 h-5 animate-pulse" />
           <span className="text-sm sm:text-base">
             khalid_masood79@hotmail.com
           </span>
         </div>
-        <div className="flex items-center gap-2">
-          <Phone className="w-5 h-5" />
+        <div className="flex items-center gap-2 hover:text-white transition">
+          <Phone className="w-5 h-5 animate-pulse" />
           <span className="text-sm sm:text-base">+92 300 8454448</span>
         </div>
-        <div className="flex items-center gap-2">
-          <MapPin className="w-5 h-5" />
+        <div className="flex items-center gap-2 hover:text-white transition">
+          <MapPin className="w-5 h-5 animate-pulse" />
           <span className="text-sm sm:text-base">Lahore, Pakistan</span>
         </div>
       </div>
 
       {/* Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 pt-2">
+      <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
         <a
           href="https://www.linkedin.com/in/KhalidKhanManager"
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 hover:scale-105 transition-all duration-300 shadow-lg"
+          className="group inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 hover:scale-105 transition-all duration-500 shadow-lg"
         >
           <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
           LinkedIn Profile
@@ -234,7 +254,7 @@ export default function Portfolio() {
         </a>
         <a
           href="mailto:khalid_masood79@hotmail.com"
-          className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 hover:scale-105 transition-all duration-300 shadow-lg"
+          className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 hover:scale-105 transition-all duration-500 shadow-lg"
         >
           <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
           Get In Touch
@@ -243,7 +263,67 @@ export default function Portfolio() {
       </div>
     </div>
   </div>
+
+  {/* Custom Animations */}
+  <style jsx>{`
+    @keyframes float-slow {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-30px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    @keyframes float-delayed {
+      0% {
+        transform: translateY(0px) scale(1);
+      }
+      50% {
+        transform: translateY(40px) scale(1.1);
+      }
+      100% {
+        transform: translateY(0px) scale(1);
+      }
+    }
+    @keyframes float-mid {
+      0% {
+        transform: translateY(0px) scale(1);
+      }
+      50% {
+        transform: translateY(-20px) scale(1.05);
+      }
+      100% {
+        transform: translateY(0px) scale(1);
+      }
+    }
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.1;
+        transform: scale(0.8);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+    .animate-float-slow {
+      animation: float-slow 9s ease-in-out infinite;
+    }
+    .animate-float-delayed {
+      animation: float-delayed 12s ease-in-out infinite;
+    }
+    .animate-float-mid {
+      animation: float-mid 10s ease-in-out infinite;
+    }
+    .animate-twinkle {
+      animation: twinkle 5s ease-in-out infinite;
+    }
+  `}</style>
 </section>
+
 
 
       {/* Main Content */}
