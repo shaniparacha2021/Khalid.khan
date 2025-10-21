@@ -791,17 +791,7 @@ export default function Portfolio() {
               </a>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-              <div className="bg-white/10 rounded-lg p-4">
-               
-              </div>
-              <div className="bg-white/10 rounded-lg p-4">
-                <div className="text-2xl font-bold text-white mb-1">100+</div>
-                <div className="text-indigo-200 text-sm">Projects Completed</div>
-              </div>
-              <div className="bg-white/10 rounded-lg p-4">
-                <div className="text-2xl font-bold text-white mb-1">50+</div>
-                <div className="text-indigo-200 text-sm">Organizations Served</div>
-              </div>
+              
             </div>
           </div>
         </section>
