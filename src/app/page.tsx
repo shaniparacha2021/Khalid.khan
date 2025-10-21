@@ -147,107 +147,101 @@ export default function Portfolio() {
       <MobileNavigation />
       
       {/* Hero Section */}
-      <section id="home" className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8 pt-24 xl:pt-12 overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            {/* Left Side - Name and Position */}
-            <div className="flex-1 text-center lg:text-left animate-fade-in-up">
-              <div className="mb-6">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight">
-                KHALID MASOOD KHAN
-              </h1>
-                <div className="h-1 w-24 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto lg:mx-0 mb-6 rounded-full"></div>
-                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-blue-100 font-medium mb-2">
-                  Strategic HR & Operations Leader
-                </p>
-                <p className="text-lg sm:text-xl text-blue-200 font-light mb-8">
-                  AI-Driven HR Transformation | Organizational Excellence
-                </p>
-              </div>
-              
-              {/* Professional Stats */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-2xl font-bold text-white">About Me</div>
-                  <div className="text-blue-200 text-sm"> <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
-              Highly experienced and service-oriented management professional with 22 years progressive work exposure in Operational Excellence & Compliance, Human Resource Management, Project Monitoring & Follow ups, Corporate Governance, Executive Office Management, Business Support & Coordination, General Administration, Local and International Correspondence, End to end Travel & Logistic Support, Customer Services.
-            </p>
-            <p className="text-gray-200 text-sm sm:text-base leading-relaxed mt-4">
-              Exposed in diversified industries and also possess ability to perform well under work pressure, coordinate with multicultural personnel including various clients, meet tight deadlines, deal tactfully with various concerned agencies and surpass performance parameters. Self-motivated and result oriented with excellent communication, leadership, problem solving, decision making, time management and interpersonal skills.
-            </p></div>
-                </div>
+     {/* Hero Section */}
+<section
+  id="home"
+  className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20 px-6 lg:px-12 overflow-hidden"
+>
+  {/* Background Animation */}
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+    <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  </div>
 
-              </div>
-              
-              {/* Contact Info */}
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center justify-center lg:justify-start gap-3 text-blue-100 hover:text-white transition-colors duration-300">
-                  <Mail className="w-5 h-5" />
-                  <span className="text-sm sm:text-base">khalid_masood79@hotmail.com</span>
-                </div>
-                <div className="flex items-center justify-center lg:justify-start gap-3 text-blue-100 hover:text-white transition-colors duration-300">
-                  <Phone className="w-5 h-5" />
-                  <span className="text-sm sm:text-base">+92 300 8454448 (Mobile)</span>
-                </div>
-                <div className="flex items-center justify-center lg:justify-start gap-3 text-blue-100 hover:text-white transition-colors duration-300">
-                  <MapPin className="w-5 h-5" />
-                  <span className="text-sm sm:text-base">Lahore, Pakistan</span>
-                </div>
-              </div>
-            </div>
-            
-            {/* Right Side - Profile Image */}
-            <div className="flex-shrink-0 animate-fade-in-right">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-                <div className="relative w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl group-hover:border-white/50 transition-all duration-500 group-hover:scale-105">
+  <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
+    {/* Left - Profile Image */}
+    <div className="relative group flex-shrink-0">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition"></div>
+      <div className="relative w-56 h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl group-hover:border-white/50 transition-all duration-500 group-hover:scale-105">
         <Image
-                    src="/khalid-masood-khan.png"
-                  alt="Khalid Masood Khan"
-                    width={250}
-                    height={250}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          src="/khalid-masood-khan.png"
+          alt="Khalid Masood Khan"
+          width={260}
+          height={260}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           priority
         />
-                </div>
-                {/* Floating elements around image */}
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-400/20 rounded-full animate-bounce delay-1000"></div>
-                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-400/20 rounded-full animate-bounce delay-2000"></div>
-                <div className="absolute top-1/2 -right-8 w-4 h-4 bg-indigo-400/20 rounded-full animate-bounce delay-3000"></div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start animate-fade-in-up delay-500">
-            <a
-              href="https://www.linkedin.com/in/KhalidKhanManager"
-            target="_blank"
-            rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-              LinkedIn Profile
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-          </a>
-          <a
-              href="mailto:khalid_masood79@hotmail.com"
-              className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-              Get In Touch
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
-          </div>
+      </div>
+    </div>
+
+    {/* Right - Info */}
+    <div className="flex-1 space-y-6">
+      <div>
+        <h1 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight">
+          KHALID MASOOD KHAN
+        </h1>
+        <p className="text-2xl lg:text-3xl text-blue-100 font-medium mt-2">
+          Strategic HR & Operations Leader
+        </p>
+        <p className="text-lg text-blue-200 font-light">
+          AI-Driven HR Transformation | Organizational Excellence
+        </p>
+      </div>
+
+      {/* About Me Summary */}
+      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20">
+        <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
+          Experienced and service-oriented management professional with 22 years
+          of progressive work in Operational Excellence, Human Resource
+          Management, Corporate Governance, and Executive Office Operations.
+          Adept at coordinating multicultural teams, driving performance, and
+          implementing modern HR practices to achieve organizational success.
+        </p>
+      </div>
+
+      {/* Contact Info */}
+      <div className="flex flex-wrap gap-6 text-blue-100">
+        <div className="flex items-center gap-2">
+          <Mail className="w-5 h-5" />
+          <span className="text-sm sm:text-base">
+            khalid_masood79@hotmail.com
+          </span>
         </div>
-      </section>
+        <div className="flex items-center gap-2">
+          <Phone className="w-5 h-5" />
+          <span className="text-sm sm:text-base">+92 300 8454448</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <MapPin className="w-5 h-5" />
+          <span className="text-sm sm:text-base">Lahore, Pakistan</span>
+        </div>
+      </div>
+
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 pt-2">
+        <a
+          href="https://www.linkedin.com/in/KhalidKhanManager"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 hover:scale-105 transition-all duration-300 shadow-lg"
+        >
+          <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+          LinkedIn Profile
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+        </a>
+        <a
+          href="mailto:khalid_masood79@hotmail.com"
+          className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 hover:scale-105 transition-all duration-300 shadow-lg"
+        >
+          <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+          Get In Touch
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
